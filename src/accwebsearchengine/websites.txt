@@ -95,13 +95,9 @@ https://golancers.ca/
 https://www.uwindsor.ca/studenthealthservices/
 https://www.uwindsor.ca/residence/
 https://www.uwindsor.ca/student-government
-http://cjamlog3.cjam.ca/
 https://www.uwindsor.ca/universityplayers/
 https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.uwindsor.ca%2Fcurrent-students
 https://twitter.com/intent/tweet/?&url=http%3A%2F%2Fwww.uwindsor.ca%2Fcurrent-students
-https://www.pinterest.com/pin/create/button
-/webapps/bb-auth-provider-cas-BBLEARN/execute/casLogin?cmd=login&authProviderId=_13_1&redirectUrl=https%3A%2F%2Fblackboard.uwindsor.ca%2Fwebapps%2Fportal%2Fexecute%2FdefaultTab
-/auth-saml/saml/login?apId=_14_1&redirectUrl=https%3A%2F%2Fblackboard.uwindsor.ca%2Fwebapps%2Fportal%2Fexecute%2FdefaultTab
 http://www.uwindsor.ca/blackboard
 http://www.uwindsor.ca/bbhelp
 http://www.uwindsor.ca/uwinid
@@ -151,7 +147,6 @@ https://uwindsor.teamdynamix.com/TDClient/KB/?CategoryID=9151
 http://www.uwindsor.ca/finance/node/694
 https://efhc.fa.ca2.oraclecloud.com
 https://planning-uwinpbcs.pbcs.ca2.oraclecloud.com/HyperionPlanning
-https://uwindsor.ca/fis
 https://uwindsor.teamdynamix.com/TDClient/KB/?CategoryID=9163
 https://www.uwindsor.ca/finance/resource-listing
 https://www.uwindsor.ca/finance/glossary-policies-procedures-forms
@@ -169,7 +164,6 @@ https://www.uwindsor.ca/cces/1220/funding-resources
 http://www.uwindsor.ca/career-development-experiential/393/vip-csl-community-partner-information
 http://www.uwindsor.ca/research-innovation-services/310/research-partnerships
 http://www.uwindsor.ca/continuingeducation/continuingeducation/
-https://www.uwindsor.ca/cces/sites/uwindsor.ca.cces/files/uwindsor_employerbook_web.pdf
 https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.uwindsor.ca%2Fcces%2F1333%2Femployers
 https://twitter.com/intent/tweet/?&url=http%3A%2F%2Fwww.uwindsor.ca%2Fcces%2F1333%2Femployers
 http://www.uwindsor.ca/map
@@ -214,7 +208,6 @@ http://www.uwindsor.ca/placeofpromise/directory
 http://www.uwindsor.ca/event-calendar/month
 http://www.uwindsor.ca/dailynews/full-issue
 http://www.uwindsor.ca/engineering/425/news-and-events
-http://www.uwindsor.ca/music/388/concerts-and-events
 http://www.uwindsor.ca/viewmagazine/node/202
 http://www.uwindsor.ca/viewmagazine/advertise-in-view
 http://www.uwindsor.ca/viewmagazine/node/209
@@ -543,7 +536,6 @@ http://learn.uwindsor.ca/english-language-improvement-program?elqTrackId=04c50f5
 https://www.ouac.on.ca/apply/windsorugrad/intl/en_CA/user/login?elqTrackId=61c6de0b60bf4b969c2320a9c3d0b26b&elqaid=446&elqat=2
 https://www.ouac.on.ca/ouac-105/?elqTrackId=7cdd09efc3244c68b214cafb3158efb4&elqaid=446&elqat=2
 http://learn.uwindsor.ca/educational-agents?elqTrackId=62c9aa28f671417fade6a262b8a0ba90&elq=00000000000000000000000000000000&elqaid=446&elqat=2&elqCampaignId=
-https://lawlibrary.uwindsor.ca/Presto/content/Detail.aspx?ctID=OTdhY2QzODgtNjhlYi00ZWY0LTg2OTUtNmU5NjEzY2JkMWYx&rID=MTMy&qrs=RmFsc2U=&q=KFVuaXZlcnNpdHlfb2ZfV2luZHNvcl9DZW50cmFsX1BvbGljaWVzLkFsbFRleHQ6KGFkbWlzc2lvbikp&ph=VHJ1ZQ==&bckToL=VHJ1ZQ==&rrtc=VHJ1ZQ==&elqTrackId=5da6b21e3f3644bc9855d0d9792c834c&elqaid=446&elqat=2
 https://lawlibrary.uwindsor.ca/Presto/content/GetDoc.axd?ctID=OTdhY2QzODgtNjhlYi00ZWY0LTg2OTUtNmU5NjEzY2JkMWYx&rID=MzA=&pID=MjMy&attchmnt=False&uSesDM=False&rIdx=MzA=&rCFU=&elqTrackId=fec39430d4e54e2c80eda2ed8e718c1c&elqaid=446&elqat=2
 https://www.wes.org/?elqTrackId=3df341a88ef84bf8a35fb2d4d6d73854&elqaid=446&elqat=2
 https://www.ierf.org/?elqTrackId=884ba453329542b7a7bdc46c9a7e54ac&elqaid=446&elqat=2
@@ -554,7 +546,6 @@ http://www.uwindsor.ca/intl/54/arrival?elqTrackId=17895a1dfc3744acb44990bc91853b
 https://www.ouac.on.ca/apply/windsorugrad/intl/en_CA/user/login?elqTrackId=9f8fa19da00a4d97be26af8e166402b5&elqaid=446&elqat=2
 https://www.ouac.on.ca/ouac-105/?elqTrackId=deba22f248ee41b889377a21f9a524b2&elqaid=446&elqat=2
 http://learn.uwindsor.ca/educational-agents?elqTrackId=24bff7d3561347daa424b9a0c4379e55&elq=00000000000000000000000000000000&elqaid=446&elqat=2&elqCampaignId=
-https://lawlibrary.uwindsor.ca/Presto/content/Detail.aspx?ctID=OTdhY2QzODgtNjhlYi00ZWY0LTg2OTUtNmU5NjEzY2JkMWYx&rID=MTMy&qrs=RmFsc2U=&q=KFVuaXZlcnNpdHlfb2ZfV2luZHNvcl9DZW50cmFsX1BvbGljaWVzLkFsbFRleHQ6KGFkbWlzc2lvbikp&ph=VHJ1ZQ==&bckToL=VHJ1ZQ==&rrtc=VHJ1ZQ==&elqTrackId=9ee2819822734ea7929f6bf54de03c82&elqaid=446&elqat=2
 https://lawlibrary.uwindsor.ca/Presto/content/GetDoc.axd?ctID=OTdhY2QzODgtNjhlYi00ZWY0LTg2OTUtNmU5NjEzY2JkMWYx&rID=MzA=&pID=MjMy&attchmnt=False&uSesDM=False&rIdx=MzA=&rCFU=&elqTrackId=77593320a3fc4211ab8affe14b4e27c5&elqaid=446&elqat=2
 https://www.wes.org/?elqTrackId=3d57730980554aaa9c761e6d8f220dc0&elqaid=446&elqat=2
 https://www.ierf.org/?elqTrackId=d9af5e2bb61540b5b62b32abbafacb99&elqaid=446&elqat=2
@@ -1430,9 +1421,6 @@ https://dev.twitter.com/overview/terms/agreement
 https://dev.twitter.com/overview/terms/policy
 http://support.twitter.com/articles/14226-how-to-find-your-twitter-short-code-or-long-code
 https://www.facebook.com/
-https://www.facebook.com/recover/initiate?lwv=110&ars=royal_blue_bar
-/login/?next=https%3A%2F%2Fwww.facebook.com%2FUWindsor%2F
-http://l.facebook.com/l.php?u=http%3A%2F%2Fshare.here.com%2Fr%2Fmylocation%2Fe-eyJuYW1lIjoiVW5pdmVyc2l0eSBvZiBXaW5kc29yIiwiYWRkcmVzcyI6IjQwMSBTdW5zZXQgQXZlLCBXaW5kc29yLCBPbnRhcmlvIiwibGF0aXR1ZGUiOjQyLjMwNjMwNTQ2Mzc2NSwibG9uZ2l0dWRlIjotODMuMDY2MTcyODI2ODIxLCJwcm92aWRlck5hbWUiOiJmYWNlYm9vayIsInByb3ZpZGVySWQiOjc1OTk3NDY5MjV9%3Flink%3Daddresses%26fb_locale%3Den_US%26ref%3Dfacebook&h=AT17n7g4Y_qMikqTawV3xrSpVC_kgztpFNsO7m4Kwob3iMOsScRdm3kIM5vvzi8z0LkeLm4vZjON9JaMJRWGohx21046cDsR3ogRDcGhsE6aGll5wmPiXcV13F-fSkCe1HMDZw3ajaiJipZv
 http://l.facebook.com/l.php?u=http%3A%2F%2Fwww.uwindsor.ca%2F&h=AT22gTR3JLaDgqaYSs5Q0Vg21uWzAsKKYhRWYxCNkG27OvHjSBFyYbCsa3tbb4slejBOl1C_HtUo6tbaN0UcUVtPRijv6aGnM50K-4xZHpvjBt2KnEZl8FxDJ9wEnf5by4SypjnIZr1VekT1
 http://l.facebook.com/l.php?u=http%3A%2F%2Fwww.uwindsor.ca%2F&h=AT0OtLcaQeiQvyfvCPJaS3IRKOJXBS2AOONXUqRpuLTLSRpifY-8UkLYY86COa_lLr8fNYD43XI1iGLPo2zSfCIhWdV3YENoIPR4DspcA6rkHGFicMXTPMmHwF_aWxEPlT00CRlln7K368_O9BY
 https://www.facebook.com/UWindsor/likes?ref=page_internal
