@@ -6,6 +6,7 @@ import textprocessing.In;
 
 public class SearchEngine {
 	
+	//Method to Remove stop words and Tokenize keywords
 	public static String[] getKeywords(String inputStr) {
 		
 		//ArrayList<String> keyWords = new ArrayList<>();
@@ -37,8 +38,35 @@ public class SearchEngine {
 		return keyWords;
 		
 	}
+	
+	//Code to index URLS
+	public static HashMap<Integer,String> indexURLS() {
+		
+		HashMap<Integer,String> UrlIndex = new HashMap<Integer,String>();
+		
+		In in = new In("/Users/gagandeepnagpal/Desktop/ACC-Web-Search-Engine/src/accwebsearchengine/websites.txt");
+		
+		int i = 0;
+        while (!in.isEmpty()) {
+        	
+        	String text = in.readLine();
+        	UrlIndex.put(i,text);
+        	i++;
+           
+        	    	
+        }
+       
+		return UrlIndex;
+		
+	}
 
+	
 	public static void main(String[] args) {
+		
+		
+		
+		
+		
 		
 		String[] keyWords = SearchEngine.getKeywords("hello this is a test environment Gagandeep Singh Nagpal");
 		
@@ -46,6 +74,19 @@ public class SearchEngine {
 			
 			System.out.println(str);
 		}
+		
+		
+		
+	
+		
+		HashMap<Integer,String> UrlIndex = new HashMap<Integer, String>();
+		
+		UrlIndex = SearchEngine.indexURLS();
+		
+		System.out.println(UrlIndex);
+		//System.out.println(UrlIndex.get(1));
+		
+		
 
 	}
 
