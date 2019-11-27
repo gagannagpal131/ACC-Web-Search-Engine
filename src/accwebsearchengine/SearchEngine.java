@@ -9,12 +9,15 @@ public class SearchEngine {
 	//Method to Remove stop words and Tokenize keywords
 	public static String[] getKeywords(String inputStr) {
 		
-		//ArrayList<String> keyWords = new ArrayList<>();
-		
+	
 		In in = new In("/Users/gagandeepnagpal/Desktop/ACC-Web-Search-Engine/src/accwebsearchengine/stop-words.txt");
+		
+		inputStr = inputStr.toLowerCase();
+		
 		while (!in.isEmpty()) {
 			
 			String text = in.readLine();
+			text = text.toLowerCase();
 			text = "\\b"+text+"\\b";
 			inputStr = inputStr.replaceAll(text,"");
 			
@@ -68,7 +71,7 @@ public class SearchEngine {
 		
 		
 		
-		String[] keyWords = SearchEngine.getKeywords("hello this is a test environment Gagandeep Singh Nagpal");
+		String[] keyWords = SearchEngine.getKeywords("hello This is A test environment Gagandeep Singh Nagpal");
 		
 		for (String str : keyWords) {
 			
