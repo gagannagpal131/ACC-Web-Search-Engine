@@ -1,10 +1,10 @@
 package accwebsearchengine;
 
 import java.io.File;
-
 import java.util.*;
-
 import textprocessing.*;
+import sorting.*;
+import static java.util.stream.Collectors.toMap;
 
 
 public class SearchEngine {
@@ -46,10 +46,6 @@ public class SearchEngine {
 		return keyWords;
 		
 	}
-	
-	
-	
-	
 	
 	
 	
@@ -209,11 +205,31 @@ public class SearchEngine {
 	
 	
 	
+	public static HashMap<Integer, Integer> sortHashMap(HashMap<Integer,Integer> freqList){
+		
+		
+		  HashMap<Integer, Integer> sortedFreqList = freqList
+		          .entrySet()
+		          .stream()
+		          .sorted(Collections.reverseOrder(Map.Entry.comparingByValue()))
+		          .collect(
+		              toMap(e -> e.getKey(), e -> e.getValue(), (e1, e2) -> e2,
+		                  LinkedHashMap::new));
+		
+		 
+		
+		return sortedFreqList;		
+		
+	}
+	
 	
 	public static void main(String[] args) {
 		
-		String mySearch = "Masters of Applied Computing at University of Windsor";
+		String mySearch = "Masters of Applied Computing";
 		String[] keyWords = SearchEngine.getKeywords(mySearch);
+		
+		
+		Sort.mergeSort(keyWords);
 		
 //		for (String str : keyWords) {
 //			
@@ -225,14 +241,14 @@ public class SearchEngine {
 		HashMap<Integer,String> UrlIndex = new HashMap<Integer, String>();
 		UrlIndex = SearchEngine.indexURLS();
 		//System.out.println(UrlIndex);
-		//System.out.println(UrlIndex.get(1));
 		
 		
 		HashMap<Integer,Integer> freqList = new HashMap<Integer,Integer>();
 		freqList = SearchEngine.getFreqList(keyWords);
 		//System.out.println(freqList);
 		
-		
+		freqList = SearchEngine.sortHashMap(freqList);
+		System.out.println(freqList);
 
 	}
 

@@ -8,5 +8,6 @@
 	</classpathentry>
 	<classpathentry kind="lib" path="Text Processing"/>
 	<classpathentry kind="lib" path="jsoup-1.12.1.jar"/>
+	<classpathentry kind="lib" path="Sorting"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
