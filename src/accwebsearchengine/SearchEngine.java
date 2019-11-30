@@ -226,9 +226,8 @@ public class SearchEngine {
 	public static void main(String[] args) {
 		
 		String mySearch = "Masters of Applied Computing";
+		
 		String[] keyWords = SearchEngine.getKeywords(mySearch);
-		
-		
 		Sort.mergeSort(keyWords);
 		
 //		for (String str : keyWords) {
@@ -238,8 +237,8 @@ public class SearchEngine {
 		
 	
 
-		HashMap<Integer,String> UrlIndex = new HashMap<Integer, String>();
-		UrlIndex = SearchEngine.indexURLS();
+		HashMap<Integer,String> urlIndex = new HashMap<Integer, String>();
+		urlIndex = SearchEngine.indexURLS();
 		//System.out.println(UrlIndex);
 		
 		
@@ -249,6 +248,22 @@ public class SearchEngine {
 		
 		freqList = SearchEngine.sortHashMap(freqList);
 		System.out.println(freqList);
+		
+		int j = 0;
+		for (HashMap.Entry<Integer, Integer> entry : freqList.entrySet()) {
+			
+			if (j < 10) {
+				
+				//System.out.println(entry.getKey() + " = " + entry.getValue());
+				int urlKey = entry.getKey();
+				System.out.println("\n"+urlIndex.get(urlKey)+"\n");
+				j++;
+				
+			} else {
+				
+				break;
+			}
+		}
 
 	}
 
