@@ -14,6 +14,7 @@ public class SearchEngine {
 	//Method to Remove stop words and Tokenize keywords
 	public static String[] getKeywords(String inputStr) {
 		
+		
 	
 		In in = new In("/Users/gagandeepnagpal/Desktop/ACC-Web-Search-Engine/src/accwebsearchengine/stop-words.txt");
 		
@@ -48,9 +49,7 @@ public class SearchEngine {
 	}
 	
 	
-	
-	
-	
+
 	//Code to index URLS
 	public static HashMap<Integer,String> indexURLS() {
 		
@@ -71,13 +70,6 @@ public class SearchEngine {
 		return UrlIndex;
 		
 	}
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	
@@ -133,10 +125,6 @@ public class SearchEngine {
 		return tst;
 		
 	}
-	
-	
-	
-	
 	
 	
 	
@@ -204,7 +192,6 @@ public class SearchEngine {
 
 	
 	
-	
 	public static HashMap<Integer, Integer> sortHashMap(HashMap<Integer,Integer> freqList){
 		
 		
@@ -222,9 +209,6 @@ public class SearchEngine {
 		
 	}
 	
-	
-	
-
 	
 	
 	public static void storeHashMap(HashMap<Integer, Integer> freqList, String[] keyWords) {
@@ -260,6 +244,8 @@ public class SearchEngine {
 		}
 
 	}
+	
+	
 	
 	public static HashMap<Integer,Integer> retreiveHashMap(String[] keyWords) {
 		
@@ -298,56 +284,98 @@ public class SearchEngine {
 	
 	
 	
-	
-	
-	
 	public static void main(String[] args) {
 		
 		String mySearch = "Masters of Applied Computing";
 		
 		String[] keyWords = SearchEngine.getKeywords(mySearch);
-		
-//		for (String str : keyWords) {
-//			
-//			System.out.println(str);
-//		}
-	
-		HashMap<Integer,String> urlIndex = new HashMap<Integer, String>();
-		urlIndex = SearchEngine.indexURLS();
-		//System.out.println(UrlIndex);
-		
-		
-		HashMap<Integer,Integer> freqList = new HashMap<Integer,Integer>();
-		freqList = SearchEngine.getFreqList(keyWords);
-		//System.out.println(freqList);
-		
-		freqList = SearchEngine.sortHashMap(freqList);
-		//System.out.println(freqList);
-		
-		SearchEngine.storeHashMap(freqList, keyWords);
-		freqList = SearchEngine.retreiveHashMap(keyWords);
-		
-		System.out.println(freqList);
-		
-		System.out.println("Top Ten Search Results for \""+mySearch +"\" are:\n");
-		int j = 0;
-		for (HashMap.Entry<Integer, Integer> entry : freqList.entrySet()) {
+		Sort.mergeSort(keyWords);
 			
-			if (j < 10) {
-				
-				//System.out.println(entry.getKey() + " = " + entry.getValue());
-				int urlKey = entry.getKey();
-				System.out.println(urlIndex.get(urlKey)+"\n");
-				j++;
-				
-			} else {
-				
-				break;
-			}
+		String fileName = "";
+		for (String str : keyWords) {
+
+			fileName = fileName + str + "_";
 		}
+
+		fileName = fileName + ".dat";
 		
+		boolean fileExist = false;
 		
+		File folder = new File("/Users/gagandeepnagpal/Desktop/ACC-Web-Search-Engine/src/accwebsearchengine/hashmap_data"); 
+        File[] files = folder.listFiles();
+ 
+        for (File file : files)
+        {
+        	
+            String myFileName = file.getName();
+            
+            if(myFileName.compareTo(fileName) == 0) {
+            	
+            	fileExist = true;
+            	break;
+           
+            }
+           	
+        }
 		
+        
+		if (fileExist == true){
+			
+			HashMap<Integer,String> urlIndex = new HashMap<Integer, String>();
+			urlIndex = SearchEngine.indexURLS();
+			
+			HashMap<Integer,Integer> freqList = new HashMap<Integer,Integer>();
+			freqList = SearchEngine.retreiveHashMap(keyWords);
+			
+			System.out.println("Top Ten Search Results for \""+mySearch +"\" are:\n");
+			
+			int j = 0;
+			for (HashMap.Entry<Integer, Integer> entry : freqList.entrySet()) {
+				
+				if (j < 10) {
+					
+					//System.out.println(entry.getKey() + " = " + entry.getValue());
+					int urlKey = entry.getKey();
+					System.out.println(urlIndex.get(urlKey)+"\n");
+					j++;
+					
+				} else {
+					
+					break;
+				}
+			}
+				
+		} else if (fileExist == false) {
+			
+			HashMap<Integer,String> urlIndex = new HashMap<Integer, String>();
+			urlIndex = SearchEngine.indexURLS();
+			
+			HashMap<Integer,Integer> freqList = new HashMap<Integer,Integer>();
+			freqList = SearchEngine.getFreqList(keyWords);
+			
+			freqList = SearchEngine.sortHashMap(freqList);
+			
+			SearchEngine.storeHashMap(freqList, keyWords);
+					
+			System.out.println("Top Ten Search Results for \""+mySearch +"\" are:\n");
+			int j = 0;
+			
+			for (HashMap.Entry<Integer, Integer> entry : freqList.entrySet()) {
+				
+				if (j < 10) {
+					
+					//System.out.println(entry.getKey() + " = " + entry.getValue());
+					int urlKey = entry.getKey();
+					System.out.println(urlIndex.get(urlKey)+"\n");
+					j++;
+					
+				} else {
+					
+					break;
+				}
+			}	
+			
+		}	
 
 	}
 
