@@ -1,6 +1,6 @@
 package accwebsearchengine;
 
-import java.io.File;
+import java.io.*;
 import java.util.*;
 import textprocessing.*;
 import sorting.*;
@@ -223,20 +223,95 @@ public class SearchEngine {
 	}
 	
 	
+	
+
+	
+	
+	public static void storeHashMap(HashMap<Integer, Integer> freqList, String[] keyWords) {
+
+		Sort.mergeSort(keyWords);
+
+		String fileName = "";
+
+		for (String str : keyWords) {
+
+			fileName = fileName + str + "_";
+		}
+
+		fileName = fileName + ".dat";
+
+		// System.out.println(fileName);
+		
+		String filePath = "/Users/gagandeepnagpal/Desktop/ACC-Web-Search-Engine/src/accwebsearchengine/hashmap_data/";
+		String finalPath = filePath + fileName;
+
+		try {
+
+			FileOutputStream fileOut = new FileOutputStream(finalPath);
+			ObjectOutputStream out = new ObjectOutputStream(fileOut);
+			out.writeObject(freqList);
+			out.close();
+			fileOut.close();
+
+		} catch (Exception e) {
+
+			e.printStackTrace();
+
+		}
+
+	}
+	
+	public static HashMap<Integer,Integer> retreiveHashMap(String[] keyWords) {
+		
+		Sort.mergeSort(keyWords);
+
+		String fileName = "";
+
+		for (String str : keyWords) {
+
+			fileName = fileName + str + "_";
+		}
+
+		fileName = fileName + ".dat";
+		String filePath = "/Users/gagandeepnagpal/Desktop/ACC-Web-Search-Engine/src/accwebsearchengine/hashmap_data/";
+		String finalPath = filePath + fileName;
+		
+		  HashMap<Integer,Integer> freqList = new HashMap<Integer,Integer>();
+		  freqList = null;
+		  
+		  try{
+			  
+			  FileInputStream fileIn = new FileInputStream(finalPath);
+			  ObjectInputStream in = new ObjectInputStream(fileIn);
+			  freqList = (HashMap<Integer, Integer>)in.readObject();
+			  in.close();
+			  fileIn.close();
+			  
+		  } catch (Exception e){
+			  
+		  e.printStackTrace();
+		  }
+	
+		  return freqList;
+		
+	}
+	
+	
+	
+	
+	
+	
 	public static void main(String[] args) {
 		
 		String mySearch = "Masters of Applied Computing";
 		
 		String[] keyWords = SearchEngine.getKeywords(mySearch);
-		Sort.mergeSort(keyWords);
 		
 //		for (String str : keyWords) {
 //			
 //			System.out.println(str);
 //		}
-		
 	
-
 		HashMap<Integer,String> urlIndex = new HashMap<Integer, String>();
 		urlIndex = SearchEngine.indexURLS();
 		//System.out.println(UrlIndex);
@@ -247,8 +322,14 @@ public class SearchEngine {
 		//System.out.println(freqList);
 		
 		freqList = SearchEngine.sortHashMap(freqList);
+		//System.out.println(freqList);
+		
+		SearchEngine.storeHashMap(freqList, keyWords);
+		freqList = SearchEngine.retreiveHashMap(keyWords);
+		
 		System.out.println(freqList);
 		
+		System.out.println("Top Ten Search Results for \""+mySearch +"\" are:\n");
 		int j = 0;
 		for (HashMap.Entry<Integer, Integer> entry : freqList.entrySet()) {
 			
@@ -256,7 +337,7 @@ public class SearchEngine {
 				
 				//System.out.println(entry.getKey() + " = " + entry.getValue());
 				int urlKey = entry.getKey();
-				System.out.println("\n"+urlIndex.get(urlKey)+"\n");
+				System.out.println(urlIndex.get(urlKey)+"\n");
 				j++;
 				
 			} else {
@@ -264,6 +345,9 @@ public class SearchEngine {
 				break;
 			}
 		}
+		
+		
+		
 
 	}
 
