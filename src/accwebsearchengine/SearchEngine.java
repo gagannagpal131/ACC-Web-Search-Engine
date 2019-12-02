@@ -10,91 +10,87 @@ import static java.util.stream.Collectors.toMap;
 public class SearchEngine {
 	
 
-	
-	//Method to Remove stop words and Tokenize keywords
-	public static String[] getKeywords(String inputStr) {
-		
-		
-	
-		In in = new In("/Users/gagandeepnagpal/Desktop/ACC-Web-Search-Engine/src/accwebsearchengine/stop-words.txt");
-		
+	/**
+	 * This method is responsible for removing stop words
+	 * from the input keywords  
+	 * @param inputStr
+	 * @return
+	 */
+	public static String[] getKeywords(String inputStr) 
+	{
+		int i = 0;
+		In in = new In("/Users/gagandeepnagpal/Desktop/ACC-Web-Search-Engine/src/accwebsearchengine/stop-words.txt");	
 		inputStr = inputStr.toLowerCase();
 		
-		while (!in.isEmpty()) {
+		while (!in.isEmpty()) 
+		{
 			
 			String text = in.readLine();
 			text = text.toLowerCase();
 			text = "\\b"+text+"\\b";
-			inputStr = inputStr.replaceAll(text,"");
-			
+			inputStr = inputStr.replaceAll(text,"");	
 		}
 		
 		//System.out.println(inputStr);
 		
 		StringTokenizer st  = new StringTokenizer(inputStr, " ");
-		
 		String[] keyWords = new String[st.countTokens()];
-	
-		int i = 0;
 		
-		while (st.hasMoreTokens()) { 
-			
+		while (st.hasMoreTokens()) 
+		{ 
 			keyWords[i]=st.nextToken();
-				i++;
-			
-        	 }
-		
+			i++;
+        }
 		return keyWords;
-		
 	}
 	
 	
 
-	//Code to index URLS
-	public static HashMap<Integer,String> indexURLS() {
-		
-		HashMap<Integer,String> UrlIndex = new HashMap<Integer,String>();
-		
+	/**
+	 * This methods is responsible for indexing URLs by fetching URLs from file
+	 * and inserting each URL into Hashmap
+	 * @return
+	 */
+	public static HashMap<Integer,String> indexURLS() 
+	{	
+		int i = 0;
+		HashMap<Integer,String> UrlIndex = new HashMap<Integer,String>();	
 		In in = new In("/Users/gagandeepnagpal/Desktop/ACC-Web-Search-Engine/src/accwebsearchengine/websites.txt");
 		
-		int i = 0;
-        while (!in.isEmpty()) {
+        while (!in.isEmpty()) 
+        {
         	
         	String text = in.readLine();
         	UrlIndex.put(i,text);
-        	i++;
-           
-        	    	
+        	i++;	    	
         }
-       
 		return UrlIndex;
-		
 	}
 	
 	
-	
-	public static TST<Integer> getTST(String finalPath) {
-		
-		TST<Integer> tst = new TST<Integer>();
-		
+	/**
+	 * This method is responsible for creating TST of each text file 
+	 * @param finalPath
+	 * @return
+	 */
+	public static TST<Integer> getTST(String finalPath) 
+	{	
+		int j = 0;
+		TST<Integer> tst = new TST<Integer>();	
 		In in = new In(finalPath);
 		
-		int j = 0;
-        while (!in.isEmpty()) {
-        	
-        String text = in.readLine();
-        	
+        while (!in.isEmpty()) 
+        {
+        	String text = in.readLine();
 	        if (j == 0) {
 	            	 
 	        	j = 1;
 	            continue;
 	            	 
-	        } else if (j == 1) {
-	            		  
+	        } else if (j == 1) {  
 	        	j = 0; 
 	        	
 	        	StringTokenizer st  = new StringTokenizer(text, " ");
-	        	
 	        	while (st.hasMoreTokens()) { 
 	    			
 	    			String word = st.nextToken();
@@ -109,13 +105,9 @@ public class SearchEngine {
 	        		} else {
 	        			
 	        			tst.put(word, 1);
-	        			
 	        		}
-
 	            }
-
-	        }
-        	    	
+	        }	
         }
         
 //        for (String key : tst.keys()) {
@@ -123,17 +115,22 @@ public class SearchEngine {
 //        }
         
 		return tst;
-		
 	}
 	
 	
-	
+	/**
+	 * This method is responsible to find the the occurrence of the keywords in each text file
+	 * and get the count
+	 * @param keyWords
+	 * @return
+	 */
 	public static HashMap<Integer, Integer> getFreqList(String[] keyWords){
 		
 		
 		//Map each text file to its corresponding number into an arraylist
 		ArrayList<String> textList = new ArrayList<>();
-		
+		HashMap<Integer,Integer > freqList = new HashMap<Integer, Integer>();
+	       
 		File folder = new File("/Users/gagandeepnagpal/Desktop/ACC-Web-Search-Engine/src/accwebsearchengine/urls"); 
         File[] files = folder.listFiles();
  
@@ -145,8 +142,6 @@ public class SearchEngine {
             textList.add(myURL);
         	
         }
-       
-        HashMap<Integer,Integer > freqList = new HashMap<Integer, Integer>();
         
         for (int i = 0 ; i < textList.size() ; i++) {
         	
@@ -170,20 +165,16 @@ public class SearchEngine {
 	        
 	        int counter = 0;
 	        
-	        for (String str: keyWords) {
-	        	
+	        for (String str: keyWords) {	        	
 	        	if (tst.contains(str)){
-	        		
+	
 	        		int count = tst.get(str);
 	        		//System.out.println(str+" "+count);
-	        		counter = counter + count;
-	        		
+	        		counter = counter + count;        		
 	        	}
-	        	
 	        }
 	       
 	        freqList.put(fileIndex, counter);
-	             
         }  
         
         //System.out.println(freqList);
@@ -191,30 +182,34 @@ public class SearchEngine {
 	}
 
 	
-	
-	public static HashMap<Integer, Integer> sortHashMap(HashMap<Integer,Integer> freqList){
-		
-		
+	/**
+	 * This method is responsible to sort hashmap in descending order based on the values
+	 * @param freqList
+	 * @return
+	 */
+	public static HashMap<Integer, Integer> sortHashMap(HashMap<Integer,Integer> freqList)
+	{	
 		  HashMap<Integer, Integer> sortedFreqList = freqList
 		          .entrySet()
 		          .stream()
 		          .sorted(Collections.reverseOrder(Map.Entry.comparingByValue()))
 		          .collect(
 		              toMap(e -> e.getKey(), e -> e.getValue(), (e1, e2) -> e2,
-		                  LinkedHashMap::new));
-		
-		 
+		                  LinkedHashMap::new)); 
 		
 		return sortedFreqList;		
-		
 	}
 	
 	
 	
+	/**
+	 * This method is used to store the frequency list hashmap used for Page Ranking
+	 * @param freqList
+	 * @param keyWords
+	 */
 	public static void storeHashMap(HashMap<Integer, Integer> freqList, String[] keyWords) {
 
 		Sort.mergeSort(keyWords);
-
 		String fileName = "";
 
 		for (String str : keyWords) {
@@ -225,7 +220,7 @@ public class SearchEngine {
 		fileName = fileName + ".dat";
 
 		// System.out.println(fileName);
-		
+
 		String filePath = "/Users/gagandeepnagpal/Desktop/ACC-Web-Search-Engine/src/accwebsearchengine/hashmap_data/";
 		String finalPath = filePath + fileName;
 
@@ -240,13 +235,16 @@ public class SearchEngine {
 		} catch (Exception e) {
 
 			e.printStackTrace();
-
 		}
 
 	}
 	
 	
-	
+	/**
+	 * This method is used to retrieve the frequency list hashmap used for Page Ranking
+	 * @param keyWords
+	 * @return
+	 */
 	public static HashMap<Integer,Integer> retreiveHashMap(String[] keyWords) {
 		
 		Sort.mergeSort(keyWords);
@@ -283,7 +281,10 @@ public class SearchEngine {
 	}
 	
 	
-	
+	/**
+	 * This method is responsible for all the process, main driver function
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		
 		String mySearch = "Masters of Applied Computing";
@@ -304,20 +305,18 @@ public class SearchEngine {
 		File folder = new File("/Users/gagandeepnagpal/Desktop/ACC-Web-Search-Engine/src/accwebsearchengine/hashmap_data"); 
         File[] files = folder.listFiles();
  
-        for (File file : files)
-        {
-        	
-            String myFileName = file.getName();
-            
-            if(myFileName.compareTo(fileName) == 0) {
-            	
-            	fileExist = true;
-            	break;
-           
-            }
-           	
-        }
-		
+		for (File file : files) {
+
+			String myFileName = file.getName();
+
+			if (myFileName.compareTo(fileName) == 0) {
+
+				fileExist = true;
+				break;
+
+			}
+
+		}	
         
 		if (fileExist == true){
 			

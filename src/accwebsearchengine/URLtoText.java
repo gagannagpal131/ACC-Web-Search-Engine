@@ -5,6 +5,13 @@ import java.util.ArrayList;
 import org.jsoup.Jsoup;
 import textprocessing.*;
 
+/**
+ * This Class converts the accesses the various URLs and converts
+ * them to corresponding text files.
+ * Which are used for searching and page ranking.
+ */
+
+
 public class URLtoText {
 
 	public static void main(String[] args) {
