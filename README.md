@@ -1,5 +1,5 @@
 # Web-Search-Engine
-Web Search Engine developed in Java, while web crawler is developed in Python 3.<br/
+Web Search Engine developed in Java, while web crawler is developed in Python 3.<br/>
 A simple search engine which is based on the frequency of the key words in the text files.<br/>
 
 **Project Components**<br/>
@@ -10,14 +10,12 @@ A simple search engine which is based on the frequency of the key words in the t
 --> Java File: URLtoText.java - Code to parse URLs to text files.<br/>
 --> Jave File: SearchEngine.java - Driver Code along with functions.<br/>
 
-**Concepts Used:** <br/>
+**Concepts Used:**<br/>
 1) Sorting (Merge Sort)
 2) Ternary Search Trie
 3) Hash Maps
 4) Text Processing (JSoup, String Functions)
 5) Memory Management (Caching)
-
-<br/>
 
 **Flow of Execution of the Search Engine**<br/>
 1) Use of Python web crawler to used to crawl the web and recursively retreive around 1500 URLs.<br/>
