@@ -2,7 +2,7 @@
 Web Search Engine developed in Java, while web crawler is developed in Python 3.<br/>
 A simple search engine which is based on the frequency of the key words in the text files.<br/>
 
-**Project Components**<br/>
+**Project Components:**<br/>
 --> Imported Packages : Text Processing, Sorting<br/>
 --> Python Web crawler: web-crawler.py<br/>
 --> Text Files: websites.txt, stop-words.txt<br/>
@@ -17,7 +17,7 @@ A simple search engine which is based on the frequency of the key words in the t
 4) Text Processing (JSoup, String Functions)
 5) Memory Management (Caching)
 
-**Flow of Execution of the Search Engine**<br/>
+**Flow of Execution of the Search Engine:**<br/>
 1) Use of Python web crawler to used to crawl the web and recursively retreive around 1500 URLs.<br/>
 2) Each URL is parsed to a text file using JSoup. 
 3) Stop words are removed from the Search String given by the user.
@@ -28,4 +28,9 @@ A simple search engine which is based on the frequency of the key words in the t
 8) The page ranking Hash Map is sorted in decreasing order of frequency words.
 9) Page ranking Hash Map is stored in memory to implement cache and drastically improve search time.
 
+**Screenshots:**<br/><br/>
+--> Driver Java file<br/>
+<img src = "https://github.com/gagannagpal131/ACC-Web-Search-Engine/blob/master/Screenshots/Eclipse%20View.png" width = "750">
 
+--> Cache file generated<br/>
+<img src = "https://github.com/gagannagpal131/ACC-Web-Search-Engine/blob/master/Screenshots/Cache%20File.png" width = "600">
