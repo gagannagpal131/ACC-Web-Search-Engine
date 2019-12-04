@@ -18,7 +18,7 @@ A simple search engine which is based on the frequency of the key words in the t
 5) Memory Management (Caching)
 
 **Flow of Execution of the Search Engine:**<br/>
-1) Use of Python web crawler to used to crawl the web and recursively retreive around 1500 URLs.<br/>
+1) Use of Python web crawler to crawl the web and recursively retreive around 1500 URLs.<br/>
 2) Each URL is parsed to a text file using JSoup. 
 3) Stop words are removed from the Search String given by the user.
 4) String is converted to token using Java String Tokenizer.
